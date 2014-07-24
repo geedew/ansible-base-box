@@ -1,0 +1,4 @@
+---
+- hosts: box
+  roles:
+    - osx

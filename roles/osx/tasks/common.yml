@@ -1,0 +1,29 @@
+---
+- name: common | brew update 1
+  homebrew: update_homebrew=yes
+
+- name: common | brew tap osx_common.taps
+  homebrew_tap: name={{ item }} state=present
+  with_items: osx.common.taps
+
+- name: common | brew update 2
+  homebrew: update_homebrew=yes
+
+- name: common | brew install osx.common.packages
+  homebrew: name={{ item }} state=upgraded
+  with_items: osx.common.packages
+
+- name: common | brew cask install osx.common.casks
+  homebrew_cask: name={{ item }} state=installed
+  with_items: osx.common.casks
+
+- name: common | allow for uncommon shells
+  lineinfile:
+    dest: /etc/shells
+    line: /usr/local/bin/zsh
+    state: present
+    insertafter: EOF
+
+- name: common | change to zsh
+  command: chsh -s /usr/local/bin/zsh
+
