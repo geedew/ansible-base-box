@@ -27,6 +27,7 @@ osx:
       #- fish
       #- fortune
       #- geoip
+      - gibo
       - git
       #- gnu-sed
       #- go
@@ -89,6 +90,7 @@ osx:
       - google-chrome
       - google-chrome-canary
       - iterm2
+      - karabiner
       - keka
       - opera
       - opera-developer

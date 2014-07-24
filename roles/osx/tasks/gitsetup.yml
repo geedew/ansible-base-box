@@ -1,0 +1,6 @@
+---
+- name: git | update config file
+  template:
+    src: gitconfig.j2
+    dest: ~{{ username }}/.gitconfig
+
