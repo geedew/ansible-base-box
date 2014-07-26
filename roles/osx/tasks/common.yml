@@ -5,6 +5,10 @@
 - name: common | brew tap osx_common.taps
   homebrew_tap: name={{ item }} state=present
   with_items: osx.common.taps
+  tags:
+    - fonts
+    - packages
+    - applications
 
 - name: common | brew update 2
   homebrew: update_homebrew=yes
@@ -12,10 +16,20 @@
 - name: common | brew install osx.common.packages
   homebrew: name={{ item }} state=upgraded
   with_items: osx.common.packages
+  tags:
+    - packages
 
 - name: common | brew cask install osx.common.casks
   homebrew_cask: name={{ item }} state=installed
   with_items: osx.common.casks
+  tags:
+    - applications
+
+- name: common | brew cask install osx.common.fonts
+  homebrew_cask: name={{ item }} state=installed
+  with_items: osx.common.fonts
+  tags:
+    - fonts
 
 - name: common | allow for uncommon shells
   lineinfile:

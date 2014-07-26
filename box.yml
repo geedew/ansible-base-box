@@ -2,3 +2,4 @@
 - hosts: box
   roles:
     - osx
+    - sublimetext

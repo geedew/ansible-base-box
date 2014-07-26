@@ -4,6 +4,7 @@ osx:
     taps:
       - homebrew/dupes
       - caskroom/versions
+      - caskroom/fonts
 
     packages:
       - ansible
@@ -101,3 +102,5 @@ osx:
       - vagrant
       - virtualbox
       - vlc
+    fonts:
+      - font-source-code-pro
