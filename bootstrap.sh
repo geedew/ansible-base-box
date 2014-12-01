@@ -6,47 +6,48 @@ set -e
 SRC_DIR="$HOME/local/bin"
 ANSIBLE_DIR="$SRC_DIR/ansible"
 ANSIBLE_CONFIG_DIR="$HOME/.ansible.d"
+BREW_DIR="/usr/local/bin"
 
 # Command line tools
-if [[ ! -x /usr/bin/gcc ]]; then
+if [[ ! -x $BREW_DIR/gcc ]]; then
     echo "Info   | Install   | xcode"
     xcode-select --install
 fi
 
 # Download and install Homebrew
-if [[ ! -x /usr/local/bin/brew ]]; then
+if [[ ! -x $BREW_DIR/brew ]]; then
     echo "Info   | Install   | homebrew"
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
 # Modify the PATH
-echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
+echo export PATH='$BREW_DIR:$PATH' >> ~/.bash_profile
 
 # Download and install zsh
-if [[ ! -x /usr/local/bin/zsh ]]; then
+if [[ ! -x $BREW_DIR/zsh ]]; then
     echo "Info   | Install   | zsh"
     brew install zsh
 fi
 
 # Download and install git
-if [[ ! -x /usr/local/bin/git ]]; then
+if [[ ! -x $BREW_DIR/git ]]; then
     echo "Info   | Install   | git"
     brew install git
 fi
 
 # Download and install python
-if [[ ! -x /usr/local/bin/python ]]; then
+if [[ ! -x $BREW_DIR/python ]]; then
     echo "Info   | Install   | python"
     brew install python --framework --with-brewed-openssl
 fi
 
 # Download and install hg
-if [[ ! -x /usr/local/bin/hg ]]; then
+if [[ ! -x $BREW_DIR/hg ]]; then
     pip install mercurial
 fi
 
 # Download and install Ansible
-if [[ ! -x /usr/local/bin/ansible ]]; then
+if [[ ! -x $BREW_DIR/ansible ]]; then
     brew install ansible
 fi
 

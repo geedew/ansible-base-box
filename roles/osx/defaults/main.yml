@@ -63,6 +63,7 @@ osx:
       #- rethinkdb
       #- ruby
       #- selenium-server-standalone
+      - ssh-copy-id
       #- sqlite
       #- task
       #- the_silver_searcher
