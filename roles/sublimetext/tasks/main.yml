@@ -10,7 +10,7 @@
 - name: sublimetext | download package control
   get_url:
     url: https://sublime.wbond.net/Package Control.sublime-package
-    sha256sum: 7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0
+    sha256sum: "{{sublime_shasum}}"
     dest: "~{{ username }}{{ sublime_path }}/Installed Packages/"
   tags: 
     - sublime
