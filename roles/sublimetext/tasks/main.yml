@@ -6,6 +6,20 @@
   tags: 
     - sublime
 
+- name: sublimetext | confirm directories
+  file:
+    path: "~{{ username }}{{ sublime_path }}Installed Packages/"
+    state: directory
+  tags:
+    - sublime
+
+- name: sublimetext | confirm user packages
+  file:
+    path: "~{{ username }}{{ sublime_path }}Packages/User/"
+    state: directory
+  tags:
+    - sublime
+
 # visit https://sublime.wbond.net/installation#st3 to update urls/hash
 - name: sublimetext | download package control
   get_url:
