@@ -91,6 +91,7 @@ osx:
       - firefox-beta
       - google-chrome
       - google-chrome-canary
+      - hipchat
       - iterm2
       - karabiner
       - keka
