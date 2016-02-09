@@ -32,6 +32,7 @@
     - fonts
 
 - name: common | allow for uncommon shells
+  sudo: yes
   lineinfile:
     dest: /etc/shells
     line: /usr/local/bin/zsh

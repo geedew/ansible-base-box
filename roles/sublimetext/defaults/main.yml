@@ -2,3 +2,5 @@
 
 sublime_version: sublime-text-dev
 sublime_path: "/Library/Application Support/Sublime Text 3/"
+# Update this here https://packagecontrol.io/installation#st3
+sublime_shasum: "eb2297e1a458f27d836c04bb0cbaf282d0e7a3098092775ccb37ca9d6b2e4b7d"

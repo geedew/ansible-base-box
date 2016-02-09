@@ -23,6 +23,11 @@ fi
 # Modify the PATH
 echo export PATH='$BREW_DIR:$PATH' >> ~/.bash_profile
 
+if [[ ! -x $BREW_DIR/brew-cask ]]; then
+    echo "Info | Install | cask"
+    brew install caskroom/cask/brew-cask
+fi
+
 # Download and install zsh
 if [[ ! -x $BREW_DIR/zsh ]]; then
     echo "Info   | Install   | zsh"
@@ -60,4 +65,4 @@ mkdir -p $SRC_DIR
     #git clone git@github.org:geedew/ansible-base-box.git $ANSIBLE_CONFIG_DIR
 #fi
 
-#ansible-playbook --ask-sudo-pass -i $ANSIBLE_CONFIG_DIR/local/osx $ANSIBLE_CONFIG_DIR/box.yml --connection=local
+ansible-playbook --ask-sudo-pass -i $ANSIBLE_CONFIG_DIR/local/osx $ANSIBLE_CONFIG_DIR/box.yml --connection=local

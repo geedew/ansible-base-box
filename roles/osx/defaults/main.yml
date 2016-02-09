@@ -80,8 +80,8 @@ osx:
       #- zeromq
       - zsh
     casks:
-      - airmail
-      - bittorrent-sync
+      - airmail-beta
+      #- bittorrent-sync
       - caffeine
       - chrome-remote-desktop-host
       - chromecast
@@ -92,6 +92,7 @@ osx:
       - flux
       - google-chrome
       - google-chrome-canary
+      - hipchat
       - iterm2
       - karabiner
       - keka

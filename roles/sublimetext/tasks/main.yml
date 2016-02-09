@@ -6,26 +6,40 @@
   tags: 
     - sublime
 
+- name: sublimetext | confirm directories
+  file:
+    path: "~{{ username }}{{ sublime_path }}Installed Packages/"
+    state: directory
+  tags:
+    - sublime
+
+- name: sublimetext | confirm user packages
+  file:
+    path: "~{{ username }}{{ sublime_path }}Packages/User/"
+    state: directory
+  tags:
+    - sublime
+
 # visit https://sublime.wbond.net/installation#st3 to update urls/hash
 - name: sublimetext | download package control
   get_url:
     url: https://sublime.wbond.net/Package Control.sublime-package
-    sha256sum: 7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0
-    dest: "~{{ username }}/{{ sublime_path }}/Installed Packages/"
+    sha256sum: "{{sublime_shasum}}"
+    dest: "~{{ username }}{{ sublime_path }}/Installed Packages/"
   tags: 
     - sublime
 
 - name: sublimetext | install Packages
   template:
     src: Package Control.sublime-settings.j2
-    dest: "~{{ username }}/{{ sublime_path }}/Packages/User/Package Control.sublime-settings"
+    dest: "~{{ username }}{{ sublime_path }}/Packages/User/Package Control.sublime-settings"
   tags:
     - sublime
 
 - name: sublimetext | install preferences
   template:
     src: Preferences.sublime-settings.j2
-    dest: "~{{ username }}/{{ sublime_path }}/Packages/User/Preferences.sublime-settings"
+    dest: "~{{ username }}{{ sublime_path }}/Packages/User/Preferences.sublime-settings"
   tags: 
     - sublime
 
