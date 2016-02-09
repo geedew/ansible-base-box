@@ -89,6 +89,7 @@ osx:
       - dropbox
       - firefox
       - firefox-beta
+      - flux
       - google-chrome
       - google-chrome-canary
       - iterm2
